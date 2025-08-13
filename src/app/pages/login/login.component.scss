@@ -1,0 +1,36 @@
+@import "src/styles.scss";
+
+.login {
+  margin: 24px auto;
+  padding: 16px;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  margin: 0 0 60px;
+  font: $font-bold-lg;
+  text-align: center;
+}
+.form {
+  display: grid;
+  gap: 16px;
+  max-width: 450px;
+  min-width: 400px;
+  width: auto;
+  justify-items: center;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+}
+.field {
+  width: 100%;
+}
+
+.logo {
+  max-width: 900px;
+  height: auto;
+  margin-bottom: 5%;
+}

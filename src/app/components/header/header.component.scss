@@ -1,0 +1,70 @@
+@import "src/styles.scss";
+
+.app-toolbar {
+  background-color: #4d4d4d;
+  color: #fff;
+  min-height: 64px;
+
+  button {
+    background-color: transparent;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  padding: 0 !important;
+}
+
+.main-header-container {
+  width: 100%;
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 5%;
+}
+
+.app-logo {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .username {
+    font: $font-bold-xs;
+  }
+  .divider {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 8px;
+  }
+}
+
+.login-link {
+  font: $font-bold-sm;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

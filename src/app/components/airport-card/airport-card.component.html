@@ -1,0 +1,11 @@
+<article class="airport-card" role="button" tabindex="0" (click)="onClick()" (keydown)="onKeydown($event)">
+  <header class="header">
+    <h3 class="title">{{ name }}</h3>
+    <div class="subtitle">{{ code }}</div>
+  </header>
+
+  <div class="content">
+    <p><strong>City:</strong> {{ city }}</p>
+    <p><strong>Country:</strong> {{ country }}</p>
+  </div>
+</article>

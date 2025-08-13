@@ -1,0 +1,60 @@
+// $color-primary-a: #ffcc00;
+// $color-primary-b: #eae0c3;
+
+// $color-white: #fff;
+// $gray-10: #f7f7f7;
+// $gray-20: #ddd;
+// $gray-45: #999;
+// $gray-60: #4d4d4d;
+// $gray-75: #333;
+$gray-15: #f3f3f3;
+$gray-18: #e9e9e9;
+$gray-30: #ccc;
+$color-black: #000;
+$color-brand: #f2c305;
+
+// -------------------
+// Fonts
+// -------------------
+$font-family-primary: "Nunito", sans-serif;
+
+// -------------------
+// Font sizes
+// -------------------
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 24px;
+
+// -------------------
+// Font weights
+// -------------------
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// -------------------
+// Font styles shorthand
+// -------------------
+$font-regular-xs: $font-weight-regular $font-size-xs $font-family-primary;
+$font-regular-sm: $font-weight-regular $font-size-sm $font-family-primary;
+$font-regular-md: $font-weight-regular $font-size-md $font-family-primary;
+$font-regular-lg: $font-weight-regular $font-size-lg $font-family-primary;
+
+$font-bold-xs: $font-weight-bold $font-size-xs $font-family-primary;
+$font-bold-sm: $font-weight-bold $font-size-sm $font-family-primary;
+$font-bold-md: $font-weight-bold $font-size-md $font-family-primary;
+$font-bold-lg: $font-weight-bold $font-size-lg $font-family-primary;
+
+html,
+body {
+  height: 100%;
+  font-family: $font-family-primary;
+  margin: 0;
+}
+
+.mat-typography,
+.mat-toolbar,
+.mat-button,
+.mat-icon-button {
+  font-family: $font-family-primary !important;
+}

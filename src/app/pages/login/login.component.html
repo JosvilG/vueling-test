@@ -1,0 +1,29 @@
+<section class="login">
+  <img src="assets/vueling-default.svg" alt="Logo" class="logo" />
+  <h1 class="title">Welcome to Vueling! <br /> Please enter your credentials</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form" novalidate>
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>User</mat-label>
+      <input matInput formControlName="username" />
+      <mat-error *ngIf="form.controls.username.hasError('required')">Required</mat-error>
+      <mat-error *ngIf="form.controls.username.hasError('minlength')">Minimum 2 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Security Key</mat-label>
+      <input matInput formControlName="securityKey" />
+      <mat-error *ngIf="form.controls.securityKey.hasError('required')">Requerido</mat-error>
+    </mat-form-field>
+
+    <div class="actions">
+      <app-button type="submit" variant="primary" [disabled]="loading">
+        {{ loading ? 'Logging in…' : 'Log in' }}
+      </app-button>
+
+      <app-button variant="outline" type="button" (clicked)="fillDemo()">
+        Fill demo
+      </app-button>
+    </div>
+
+  </form>
+</section>

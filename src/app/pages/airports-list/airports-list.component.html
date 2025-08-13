@@ -1,0 +1,24 @@
+<div class="main-airport-list-container">
+    <app-side-menu (select)="onMenuSelect($event)"></app-side-menu>
+    <div>
+        <section>
+            <h1 class="section-title">{{ sectionTitle }}</h1>
+            <img src="assets/Img.png" alt="Airports of the World" class="section-image">
+            <p class="section-description" [innerHTML]="sectionDescriptionHtml"></p>
+        </section>
+
+        <section>
+            <div class="airports-list" *ngIf="airportsList">
+                <div class="airports-list-containers">
+                    <app-airport-card *ngFor="let airport of airportsList" [name]="airport.name" [code]="airport.key"
+                        [city]="airport.city" [country]="airport.country" (select)="clickAirport($event)">
+                    </app-airport-card>
+                </div>
+            </div>
+            <app-loader *ngIf="!airportsList && !error"></app-loader>
+            <div *ngIf="error">
+                {{ error }}
+            </div>
+        </section>
+    </div>
+</div>

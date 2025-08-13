@@ -1,0 +1,20 @@
+<ng-container [ngSwitch]="href ? 'a' : (routerLink ? 'router' : 'button')">
+  <!-- Enlace externo -->
+  <a *ngIf="href" [href]="href" [attr.target]="target" [attr.rel]="rel" [attr.aria-disabled]="disabled || null"
+    [ngClass]="classes" (click)="onClick($event)">
+    <ng-content></ng-content>
+  </a>
+
+  <!-- RouterLink -->
+  <a *ngIf="!href && routerLink" [routerLink]="routerLink" [attr.target]="target" [attr.rel]="rel"
+    [attr.aria-disabled]="disabled || null" [ngClass]="classes" (click)="onClick($event)">
+    <ng-content></ng-content>
+  </a>
+
+  <!-- Botón nativo -->
+  <button *ngIf="!href && !routerLink" [type]="type" [disabled]="disabled" [ngClass]="classes"
+    (click)="onClick($event)">
+    <ng-content></ng-content>
+  </button>
+
+</ng-container>

@@ -1,0 +1,31 @@
+<footer class="app-footer" role="contentinfo">
+  <div class="footer-container">
+    <nav class="footer-inner" aria-label="Footer">
+      <ul class="links" aria-label="Footer links">
+        <li *ngFor="let link of links; let i = index" class="link-item" [class.has-divider]="i !== 0">
+          <a *ngIf="link.routerLink" [routerLink]="link.routerLink" target="_blank" rel="noopener noreferrer">
+            {{ link.label }}
+          </a>
+
+          <a *ngIf="!link.routerLink" [href]="link.href" target="_blank" rel="noopener noreferrer">
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+      <div class="social" aria-label="Social media">
+        <a href="https://x.com/vueling?lang=es" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/twitter.svg" alt="" />
+        </a>
+        <a href="https://www.facebook.com/Vueling/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/facebook.svg" alt="" />
+        </a>
+        <a href="https://www.instagram.com/vueling/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/instagram.svg" alt="" />
+        </a>
+        <a href="https://www.youtube.com/@vueling" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons/youtube.svg" alt="" />
+        </a>
+      </div>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,25 @@
+<div class="main-airport-details-container">
+  <section class="detail" *ngIf="!loading && !error && airport; else stateTpl">
+    <figure class="image" *ngIf="airport.image">
+      <img [src]="airport.image" [alt]="airport.name + ' photo'">
+    </figure>
+    <header class="header">
+      <h1 class="title">{{ airport.name }} <span class="code">({{ airport.key }})</span></h1>
+      <div class="meta">
+        <span><strong>City:</strong> {{ airport.city }}</span>
+        <span><strong>Country:</strong> {{ airport.country }}</span>
+        <span *ngIf="airport.owner"><strong>Owner:</strong> {{ airport.owner }}</span>
+        <span *ngIf="airport.build"><strong>Build:</strong> {{ airport.build }}</span>
+      </div>
+    </header>
+
+
+  </section>
+
+  <ng-template #stateTpl>
+    <div class="state">
+      <app-loader *ngIf="loading"></app-loader>
+      <div class="error" *ngIf="error">{{ error }}</div>
+    </div>
+  </ng-template>
+</div>

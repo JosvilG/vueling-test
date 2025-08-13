@@ -1,0 +1,36 @@
+@import "src/styles.scss";
+
+section {
+  min-height: 100dvh;
+}
+
+.error-page {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 8px;
+  font: $font-bold-lg;
+}
+.desc {
+  margin: 0 0 16px;
+  font: $font-regular-md;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  .btn {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #f2c305;
+    color: #000;
+    font: $font-bold-sm;
+    display: inline-block;
+  }
+}

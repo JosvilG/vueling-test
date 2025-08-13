@@ -1,0 +1,70 @@
+@import "src/styles.scss";
+
+.loader-wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+}
+
+.loader-wrapper.fullscreen {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 9999;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.loader {
+  --b: 5px;
+  --c: #f2c305;
+
+  width: calc(12 * var(--b));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+        calc(2 * var(--b)) at top,
+        #0000 -1px,
+        var(--c) 0 calc(50% - 1px),
+        #0000 50% calc(100% - 1px)
+      )
+      calc(50% + var(--b)) 100%,
+    repeating-radial-gradient(
+        calc(2 * var(--b)) at bottom,
+        var(--c) -1px,
+        #0000 0 calc(50% - 1px),
+        var(--c) 50% calc(100% - 1px)
+      )
+      50% 0;
+  background-size: 150% 50%;
+  background-repeat: no-repeat;
+  mask: radial-gradient(
+        calc(1.5 * var(--b)) at calc(100% - var(--b) / 2) 0,
+        #0000 calc(100% / 3),
+        #000 calc(100% / 3 + 1px) 110%,
+        #0000 0
+      )
+      calc(50% + var(--b) / 2) 100% / calc(3 * var(--b)) 50% exclude no-repeat,
+    conic-gradient(#000 0 0);
+  animation: l20 1s infinite linear;
+}
+@keyframes l20 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes l20 {
+  100% {
+    transform: rotate(1turn);
+  }
+}

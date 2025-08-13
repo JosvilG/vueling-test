@@ -1,0 +1,26 @@
+<mat-toolbar class="app-toolbar" color="primary">
+  <div class="main-header-container">
+    <div class="left">
+      <button type="button" aria-label="Go back" (click)="onBack()">
+        <img src="assets/icons/arrow-left.svg" alt="" />
+      </button>
+
+      <img src="assets/vueling-default.png" alt="Vueling" class="app-logo" height="24" />
+    </div>
+
+    <div class="user-section" *ngIf="username; else loginLink">
+      <mat-icon aria-hidden="true">account_circle</mat-icon>
+      <span class="username">{{ username }}</span>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <button type="button" aria-label="Log out" (click)="onLogout()">
+        <img src="assets/icons/logout.svg" alt="" />
+      </button>
+    </div>
+
+    <ng-template #loginLink>
+      <a class="login-link" routerLink="/login">Log in</a>
+    </ng-template>
+  </div>
+</mat-toolbar>

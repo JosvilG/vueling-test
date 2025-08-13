@@ -1,0 +1,19 @@
+<nav class="side-menu" aria-label="Sections">
+  <ul class="menu-list" role="list">
+    <li *ngFor="let item of items; let i = index" class="menu-item" [class.is-active]="i === activeIndex"
+      [class.is-disabled]="item.disabled">
+      <a *ngIf="item.routerLink" [routerLink]="item.routerLink" class="menu-button" routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }" #rla="routerLinkActive"
+        [attr.aria-current]="rla.isActive ? 'page' : null" (click)="onClick(item, i, $event)">
+        <span class="label">{{ item.label }}</span>
+        <mat-icon class="chevron" aria-hidden="true">{{ item.iconRight || 'chevron_right' }}</mat-icon>
+      </a>
+
+      <button *ngIf="!item.routerLink" type="button" class="menu-button" (click)="onClick(item, i, $event)"
+        [disabled]="item.disabled">
+        <span class="label">{{ item.label }}</span>
+        <mat-icon class="chevron" aria-hidden="true">{{ item.iconRight || 'chevron_right' }}</mat-icon>
+      </button>
+    </li>
+  </ul>
+</nav>

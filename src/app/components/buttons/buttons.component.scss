@@ -1,0 +1,70 @@
+@import "src/styles.scss";
+
+/* Base */
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font: $font-bold-sm;
+  border: 1px solid transparent;
+  transition: filter 200ms ease, box-shadow 200ms ease,
+    background-color 200ms ease, color 200ms ease;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(242, 195, 5, 0.35);
+  }
+
+  &.btn--full {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &.btn--sm {
+    padding: 6px 12px;
+    font: $font-bold-xs;
+  }
+  &.btn--md,
+  &.btn--lg {
+    padding: 12px 20px;
+    font: $font-bold-md;
+  }
+}
+
+.btn--primary {
+  background-color: $color-brand;
+  color: #000;
+  &:hover {
+    filter: brightness(0.95);
+  }
+  &:active {
+    filter: brightness(0.9);
+  }
+}
+
+.btn--secondary {
+  background: $gray-18;
+  color: $color-black;
+  &:hover {
+    filter: brightness(0.98);
+  }
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: $gray-30;
+  color: $color-black;
+  &:hover {
+    background: $gray-15;
+  }
+}
+
+a[aria-disabled="true"],
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

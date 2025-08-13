@@ -1,0 +1,52 @@
+@import "src/styles.scss";
+
+.side-menu {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+
+  .menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .menu-item + .menu-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    font: $font-bold-sm;
+
+    &:hover,
+    &:focus-visible {
+      background: #f7f7f7;
+    }
+  }
+
+  .chevron {
+    font-size: 20px;
+  }
+
+  .is-active .menu-button {
+    background: #f3f3f3;
+  }
+
+  .is-disabled .menu-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
